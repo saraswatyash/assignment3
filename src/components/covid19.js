@@ -35,7 +35,7 @@ class covid extends Component{
                 </div>
                 )
 
-        })):(<p>Error......</p>)
+        })):(<p>Wait for a moment......</p>)
         return(
             <div className='container'>
               <div className="card-panel red bb"><h6>Total Confirmed {In_total.TotalConfirmed}</h6></div>

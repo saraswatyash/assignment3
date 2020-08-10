@@ -5,6 +5,7 @@ import Covid from './components/covid19';
 import Weather from './components/weather';
 import Home from './components/home';
 import Cases from './components/cases';
+
 import {BrowserRouter,Route, Switch} from 'react-router-dom'; 
 
 class App extends React.Component{

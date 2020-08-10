@@ -5,7 +5,6 @@ import weather from './weather';
 class cases extends Component{
     state={
         Cases: '',
-        Weather: ''
     }
     async componentDidMount(){
         let a=String(this.props.match.params.Country)
@@ -26,7 +25,7 @@ class cases extends Component{
                     <h1>{cases.Cases}</h1>
                 </div>
             )
-        })):(<p>Error</p>)
+        })):(<p>Wait for a moment.............</p>)
         return conf
     }
 }

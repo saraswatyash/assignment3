@@ -1,24 +1,34 @@
 import React from 'react';
 import axios from 'axios';
+import './all.css';
+import { Link } from 'react-router-dom';
 class weather extends React.Component{
     state={
+        cov:[],
         countries:[]
     }
-    // componentDidMount(){
-    //     axios.get('https://cors-anywhere.herokuapp.com/www.metaweather.com/api/location/search/?query=san')
-    //     .then(response=>{
-    //         this.setState({
-    //             countries:response.data
-    //         })
-    //     })
-    // }
+    componentDidMount(){
+        axios.get('https://api.covid19api.com/countries')
+        .then(response=>{
+            this.setState({
+                cov:response.data
+            })
+        })
+    }
     render(){
-    const {countries}=this.state
-    console.log(countries)
+    const {cov}=this.state
+    const sh=cov.map(countries=>{
+        return(
+            <div className='card-panel blue-grey lighten-3 aa'>
+                <Link to={'/'+countries.Country}>
+                {countries.Country}
+                </Link>
+            </div>
+        )
+    })
     return(
-        <div className='card teal'>
-            <input type='text'/>
-            <button value='Submit'>Submit</button>
+        <div className='container'>
+            {sh}
         </div>
     )
     }
