@@ -1,15 +1,17 @@
 
 .aa{
     color: black;
-    width: 200px;
+    width: 30%;
     display: inline-block;
-    margin: 5px;
+    margin: 10px;
     text-decoration: black;
+    
 }
 .bb{
-    color: black;
-    width: 230px;
+    color: whitesmoke;
+    width: 20%;
     display: inline-block;
-    margin:0px;
-
+    margin:5%;
+    padding: 5%;
+    background-color: #282c34;
 }

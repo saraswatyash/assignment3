@@ -4,7 +4,7 @@ const navbar=()=>{
     return(
         <div className="navbar-fixed">
         <nav>
-          <div className="nav-wrapper #18ffff cyan accent-2">  
+          <div className="nav-wrapper blue-grey lighten-1">  
             <ul className="right hide-on-med-and-down">
               <li><Link to="/covid19">Covid 19</Link></li>
               <li><Link to="/weather">Weather</Link></li>

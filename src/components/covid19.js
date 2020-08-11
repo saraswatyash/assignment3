@@ -28,7 +28,7 @@ class covid extends Component{
         const {cov}=this.state
         const cases=cov.length?(cov.map(covid=>{            
             return(
-                <div className='card-panel lime accent-3 aa' key={covid.Slug}>
+                <div className='card-panel grey darken-4 aa' key={covid.Slug}>
                     <Link to={'/'+covid.Slug}>
                     <p>{covid.Country}</p>
                     </Link>   
@@ -38,12 +38,14 @@ class covid extends Component{
         })):(<p>Wait for a moment......</p>)
         return(
             <div className='container'>
-              <div className="card-panel red bb"><h6>Total Confirmed {In_total.TotalConfirmed}</h6></div>
-              <div className="card-panel red bb"><h6>Total Deaths &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{In_total.TotalDeaths}</h6></div>
-              <div className="card-panel red bb"><h6>Total Recovered {In_total.TotalRecovered}</h6></div><br/>
+              <div className="card-panel  bb"><h5 className='card-title'>Total Confirmed </h5>
+              {In_total.TotalConfirmed}
+              </div>
+              <div className="card-panel  bb"><h5 className='card-title'>Total Deaths </h5>{In_total.TotalDeaths}</div>
+              <div className="card-panel bb"><h5 className='card-title'>Total Recovered </h5>{In_total.TotalRecovered}</div><br/>
               {cases}
-              
             </div>
+            
         )
     }
     
