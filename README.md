@@ -1,4 +1,4 @@
-<b>Live page weather not working due to http request problem</b>
+<b>Live page weather not working due to http request problem as page is working on https</b><br/>
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
