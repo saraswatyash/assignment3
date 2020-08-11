@@ -1,3 +1,4 @@
+<b>Live page weather not working due to http request problem</b>
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
