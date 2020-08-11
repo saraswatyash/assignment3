@@ -12,19 +12,19 @@ class weather extends React.Component{
                 "unit": "m"
             },
             "location": {
-                "name": "Saharanpur",
-                "country": "India",
+                "name": "",
+                "country": "",
                 "region": "Uttar Pradesh",
                 "lat": "29.967",
                 "lon": "77.550",
                 "timezone_id": "Asia/Kolkata",
-                "localtime": "2020-08-11 06:35",
-                "localtime_epoch": 1597127700,
+                "localtime": "2020-08-11 08:02",
+                "localtime_epoch": 1597132920,
                 "utc_offset": "5.50"
             },
             "current": {
-                "observation_time": "01:05 AM",
-                "temperature": 28,
+                "observation_time": "02:32 AM",
+                "temperature": 0,
                 "weather_code": 176,
                 "weather_icons": [
                     "https://assets.weatherstack.com/images/wsymbols01_png_64/wsymbol_0009_light_rain_showers.png"
@@ -32,14 +32,14 @@ class weather extends React.Component{
                 "weather_descriptions": [
                     "Patchy rain possible"
                 ],
-                "wind_speed": 9,
-                "wind_degree": 117,
-                "wind_dir": "ESE",
-                "pressure": 1001,
+                "wind_speed": 12,
+                "wind_degree": 134,
+                "wind_dir": "SE",
+                "pressure": 1002,
                 "precip": 0.1,
-                "humidity": 85,
-                "cloudcover": 79,
-                "feelslike": 32,
+                "humidity": 78,
+                "cloudcover": 82,
+                "feelslike": 36,
                 "uv_index": 6,
                 "visibility": 10,
                 "is_day": "yes"
@@ -53,33 +53,27 @@ class weather extends React.Component{
     }
     
     handleclick=(event)=>{
-        let {wea}=this.state
         event.preventDefault();
         axios.get('http://api.weatherstack.com/current?access_key=6000574ccf7a28b1b07fde399018b33e&query='+this.state.a)
         .then(response=>{
             this.setState({
-                wea:response
+                wea:response.data
             })
         })
-        
     }
     render(){
         const {wea}=this.state
-        console.log(wea)
-        const Weather=wea.length?(wea.map(Weather=>{
-            return(
-                <div className='card-panel' >
-                    <span className='card-title'>{Weather.data.location.name},{Weather.data.location.country}</span>
-                    {wea.data.current.temperature}
-                </div>
-            )
-            })):(<p>Type in the Country</p>)       
+
     return(
         <div className='container' >
         <form onSubmit={this.handleclick}>
            <input type='text' name='a' onChange={this.addeve}></input>
         </form>
-        {Weather}
+        <div className='card-panel light-blue accent-4 aa'>
+        <h6 className='card-title'>{wea.location.name},{wea.location.country}</h6>  
+         <h1 className=''>{wea.current.temperature}</h1>
+        </div>
+        
         </div>
     )
     }
